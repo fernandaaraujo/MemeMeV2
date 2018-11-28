@@ -14,6 +14,9 @@
 		917D671D21AF2F580016CF6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 917D671B21AF2F580016CF6F /* LaunchScreen.storyboard */; };
 		917D672821AF2F580016CF6F /* MemeMeTwoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917D672721AF2F580016CF6F /* MemeMeTwoTests.swift */; };
 		917D673321AF2F580016CF6F /* MemeMeTwoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917D673221AF2F580016CF6F /* MemeMeTwoUITests.swift */; };
+		917D674121AF3D0F0016CF6F /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917D674021AF3D0F0016CF6F /* Meme.swift */; };
+		917D674321AF3D200016CF6F /* ViewController+UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917D674221AF3D200016CF6F /* ViewController+UITextFieldDelegate.swift */; };
+		917D674521AF3D340016CF6F /* ViewController+ImagePickerControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917D674421AF3D340016CF6F /* ViewController+ImagePickerControllerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		917D672E21AF2F580016CF6F /* MemeMeTwoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemeMeTwoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		917D673221AF2F580016CF6F /* MemeMeTwoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeMeTwoUITests.swift; sourceTree = "<group>"; };
 		917D673421AF2F580016CF6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		917D674021AF3D0F0016CF6F /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
+		917D674221AF3D200016CF6F /* ViewController+UITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+UITextFieldDelegate.swift"; sourceTree = "<group>"; };
+		917D674421AF3D340016CF6F /* ViewController+ImagePickerControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ImagePickerControllerDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,9 @@
 				917D671921AF2F580016CF6F /* Assets.xcassets */,
 				917D671B21AF2F580016CF6F /* LaunchScreen.storyboard */,
 				917D671E21AF2F580016CF6F /* Info.plist */,
+				917D674021AF3D0F0016CF6F /* Meme.swift */,
+				917D674221AF3D200016CF6F /* ViewController+UITextFieldDelegate.swift */,
+				917D674421AF3D340016CF6F /* ViewController+ImagePickerControllerDelegate.swift */,
 			);
 			path = MemeMeTwo;
 			sourceTree = "<group>";
@@ -256,8 +265,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				917D674121AF3D0F0016CF6F /* Meme.swift in Sources */,
+				917D674521AF3D340016CF6F /* ViewController+ImagePickerControllerDelegate.swift in Sources */,
 				917D671521AF2F560016CF6F /* ViewController.swift in Sources */,
 				917D671321AF2F560016CF6F /* AppDelegate.swift in Sources */,
+				917D674321AF3D200016CF6F /* ViewController+UITextFieldDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

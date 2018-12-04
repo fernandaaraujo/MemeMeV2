@@ -42,8 +42,10 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>To pick an image to use for create a meme</string>
+	<string>MemeMe wants to pick an image to use for create a meme</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>MemeMe wants to save your meme in your Photo Library</string>
 	<key>NSCameraUsageDescription</key>
-	<string>To pick an image to use for create a meme</string>
+	<string>MemeMe wants to pick an image to use for create a meme</string>
 </dict>
 </plist>

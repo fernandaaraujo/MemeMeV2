@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UINavigationControllerDelegate {
+class MemeEditorViewController: UIViewController, UINavigationControllerDelegate {
 
     @IBOutlet weak var memeImage: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
@@ -47,12 +47,14 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         super.viewWillAppear(animated)
 
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        tabBarController?.tabBar.isHidden = true
         subscribeToKeyboardNotifications()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
+        tabBarController?.tabBar.isHidden = false
         unsubscribeFromKeyboardNotifications()
     }
 
@@ -112,16 +114,20 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     }
 
     @IBAction func shareMemedImage(sender: UIBarButtonItem) {
+
         let memedImage = generateMemedImage()
         let activityViewController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
 
-        present(activityViewController, animated: true, completion: nil)
-
         activityViewController.completionWithItemsHandler = { (activityType: UIActivityType?, completed: Bool, returnedItemds: [Any]?, error: Error?) -> Void in
             if completed {
+                UIImageWriteToSavedPhotosAlbum(memedImage, nil, nil, nil)
                 self.save(image: memedImage)
+                self.dismiss(animated: true, completion: nil)
+                self.navigationController?.popViewController(animated: true)
             }
         }
+
+        present(activityViewController, animated: true, completion: nil)
     }
 
     @IBAction func cancelEdit(sender: UIBarButtonItem) {

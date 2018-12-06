@@ -17,8 +17,16 @@ class SentMemesCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let space:CGFloat = 3.0
-        let dimension = (view.frame.size.width - (2 * space)) / 3.0
+        let space: CGFloat
+        let dimension: CGFloat
+
+        if (UIDeviceOrientationIsPortrait(UIDevice.current.orientation)) {
+            space = 3.0
+            dimension = (view.frame.size.width - (2 * space)) / 3
+        } else {
+            space = 1.0
+            dimension = (view.frame.size.width - (1 * space)) / 5
+        }
 
         flowLayout.minimumInteritemSpacing = space
         flowLayout.minimumLineSpacing = space

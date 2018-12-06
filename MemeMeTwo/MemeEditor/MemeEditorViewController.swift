@@ -27,6 +27,7 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
         configureTextField(element: textTop)
         configureTextField(element: textBottom)
 
+        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         memeImage.contentMode = .scaleAspectFit
     }
 
@@ -46,7 +47,6 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         tabBarController?.tabBar.isHidden = true
         subscribeToKeyboardNotifications()
     }
@@ -64,7 +64,6 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
 
     func setButtonState(_ state: Bool) {
         shareButton.isEnabled = state
-        cancelButton.isEnabled = state
     }
 
     // MARK: Keyboard
@@ -79,7 +78,7 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
     }
 
     @objc func keyboardWillShow(_ notification:Notification) {
-        if textBottom.isEditing {
+        if textBottom.isFirstResponder {
             view.frame.origin.y = getKeyboardHeight(notification) * -1
         }
     }
@@ -137,9 +136,7 @@ class MemeEditorViewController: UIViewController, UINavigationControllerDelegate
 
             self.memeImage.image = nil
             self.shareButton.isEnabled = false
-            self.textTop.text = "TOP"
-            self.textBottom.text = "BOTTOM"
-            self.dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
         }))
 
         alert.addAction(UIAlertAction(title: "No", style: .default) { (action: UIAlertAction!) in

@@ -141,14 +141,14 @@
                                     <bool key="isElement" value="YES"/>
                                 </accessibility>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="topText" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="yy7-ZV-lqY">
+                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="topText" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="TOP" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="yy7-ZV-lqY">
                                 <rect key="frame" x="16" y="84" width="288" height="48"/>
                                 <accessibility key="accessibilityConfiguration" identifier="topText"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="bottomText" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZFG-XB-q7b">
+                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="bottomText" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZFG-XB-q7b">
                                 <rect key="frame" x="16" y="407" width="288" height="48"/>
                                 <accessibility key="accessibilityConfiguration" identifier="bottomText"/>
                                 <nil key="textColor"/>
@@ -183,13 +183,16 @@
                                 <action selector="shareMemedImageWithSender:" destination="j6w-yW-1MH" id="X5a-1t-qW7"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="2j1-SH-RvX"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="2j1-SH-RvX">
+                            <connections>
+                                <action selector="cancelEditWithSender:" destination="j6w-yW-1MH" id="tpj-4h-FPG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="albumButton" destination="eYB-SW-x5B" id="A1V-jd-bdQ"/>
                         <outlet property="cameraButton" destination="LAT-gt-P8y" id="fBA-qa-l8i"/>
-                        <outlet property="cancelButton" destination="2j1-SH-RvX" id="pn2-rQ-SUk"/>
                         <outlet property="memeImage" destination="xlR-yV-RQf" id="5v5-7R-Omo"/>
                         <outlet property="shareButton" destination="sJh-CZ-Rbr" id="P57-ti-uew"/>
                         <outlet property="textBottom" destination="ZFG-XB-q7b" id="7ZZ-t2-sUD"/>
@@ -278,8 +281,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Collection" width="30" height="30"/>
-        <image name="Table" width="30" height="30"/>
+        <image name="Collection" width="60" height="61"/>
+        <image name="Table" width="60" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="o8q-lM-Myc"/>
